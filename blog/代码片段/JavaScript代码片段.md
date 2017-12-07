@@ -1,4 +1,16 @@
-### 1. [获取不重复随机数组](https://github.com/hua03/blog/blob/master/demo/code-snippets\getRandomNums.js)
+## 目录
+
+<!-- TOC -->
+
+- [目录](#目录)
+  - [1. 获取不重复随机数组](#1-获取不重复随机数组)
+
+<!-- /TOC -->
+
+
+### 1. 获取不重复随机数组
+
+[代码](https://github.com/hua03/blog/blob/master/demo/code-snippets/getRandomNums.js)
 
 ```javascript
 /**
@@ -23,5 +35,3 @@ function getRandomNums(len, maxLen){
   }
 }
 ```
-
-https://github.com/hua03/blog/blob/master/demo\code-snippets\getRandomNums.js
