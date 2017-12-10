@@ -36,7 +36,7 @@
 </html>
 ```
 
-![dom-tree](https://github.com/hua03/blog/blob/master/static/images/dom-tree.png)
+![dom tree](http://opd59bmxu.bkt.clouddn.com/2017121022295.png)
 
 ### 节点遍历
 
