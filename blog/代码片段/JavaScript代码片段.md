@@ -35,4 +35,3 @@ function getRandomNums(len, maxLen){
   }
 }
 ```
-
