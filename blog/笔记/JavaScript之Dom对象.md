@@ -137,10 +137,11 @@ node.nextElementSibling;     // <h1 title="123"></h1>
 ### 节点操作
 
 
-|       方法        |       作用       |
-| ----------------- | ---------------- |
-| `removeChild()`   | 删除节点         |
-| `replaceChild()`  | 替换节点         |
-| `appendChild()`   | 插入节点         |
-| `insertBefore()`  | 插入节点         |
-| `hasChildNodes()` | 判断是否有子节点 |
+|                                            方法                                            |       作用       |
+| ------------------------------------------------------------------------------------------ | ---------------- |
+| [createElement()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createElement) | 创建节点         |
+| [appendChild()](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/appendChild)         | 插入节点         |
+| [insertBefore()](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/insertBefore)       | 插入节点         |
+| [replaceChild()](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/replaceChild)       | 替换节点         |
+| [removeChild()](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/removeChild)         | 删除节点         |
+| [hasChildNodes()](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/hasChildNodes)     | 判断是否有子节点 |
