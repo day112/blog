@@ -41,6 +41,8 @@
 
 [节点类型](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType)
 
+|-  
+
 - `parentNode` 获取父节点
 - `firstChild` 
 
@@ -85,6 +87,12 @@ node.nextSibling;  // null
 
 ### 元素遍历
 
+- `firstElementChild`获取第一个子元素
+- `lastElementChild`获取最后一个子元素
+- `previousElementSibling`获取前一个相邻元素
+- `nextElementSibling`获取后一个相邻元素
+
+
 ```html
 <html lang="en">
   <head>
@@ -101,13 +109,9 @@ node.nextSibling;  // null
 ```javascript
 var node = document.getElementsByTagName('h1')[0];
 
-// 获取第一个子元素节点
 node.firstElementChild;       // <a href="#">123</a>
-// 获取最后一个子元素节点
 node.lastElementChild;        // <a href="#">123</a>
 
-// 获取下一个相邻节点
-node.nextElementSibling;     // <h1 title="123"></h1>
-// 获取上一个相邻节点
 node.previousElementSibling; // <a href="http://www.baidu.com">My Link</a>
+node.nextElementSibling;     // <h1 title="123"></h1>
 ```
