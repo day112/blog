@@ -126,10 +126,10 @@ node.nextElementSibling;     // <h1 title="123"></h1>
 
 ### 获取节点
 
-|          API           | 只作用于 document | 唯一返回值 | live |
-| ---------------------- | ----------------- | ---------- | ---- |
-| getElementById         | √                 | √          |      |
-| getElementsByTagName   |                   |            | √    |
-| getElementsByClassName |                   |            | √    |
-| querySelectorAll       |                   |            |      |
-| querySelector          |                   | √          |      |
+|           API            | 只作用于 document | 唯一返回值 | live |
+| ------------------------ | ----------------- | ---------- | ---- |
+| `getElementById()`         | √                 | √          | √    |
+| `getElementsByTagName()`   |                   |            | √    |
+| `getElementsByClassName()` |                   |            | √    |
+| `querySelectorAll()`       |                   |            |      |
+| `querySelector()`          |                   | √          |      |
