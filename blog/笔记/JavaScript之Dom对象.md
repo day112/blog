@@ -1,20 +1,15 @@
-<link rel="stylesheet" href="https://github.com/hua03/blog/blob/master/static/css/markdown.css">
+# Dom对象
 
 >[原文地址](https://github.com/hua03/blog/blob/master/blog/笔记/JavaScript之Dom对象.md)
-
-<style>
-
-</style>
-
 
 <!-- TOC depthFrom:2 -->
 
 - [文档树（DOM树）](#文档树dom树)
   - [HTML转换DOM树](#html转换dom树)
+  - [获取节点](#获取节点)
   - [节点遍历](#节点遍历)
   - [元素遍历](#元素遍历)
-- [节点操作](#节点操作)
-  - [获取节点](#获取节点)
+  - [节点操作](#节点操作)
 
 <!-- /TOC -->
 
@@ -45,6 +40,16 @@
 ```
 
 ![dom tree](http://opd59bmxu.bkt.clouddn.com/2017121022295.png)
+
+### 获取节点
+
+|            API             | 只作用于 document | 唯一返回值 | live |
+| -------------------------- | ----------------- | ---------- | ---- |
+| `getElementById()`         | √                 | √          | √    |
+| `getElementsByTagName()`   |                   |            | √    |
+| `getElementsByClassName()` |                   |            | √    |
+| `querySelectorAll()`       |                   |            |      |
+| `querySelector()`          |                   | √          |      |
 
 ### 节点遍历
 
@@ -129,14 +134,13 @@ node.previousElementSibling; // <a href="http://www.baidu.com">My Link</a>
 node.nextElementSibling;     // <h1 title="123"></h1>
 ```
 
-## 节点操作
+### 节点操作
 
-### 获取节点
 
-|           API            | 只作用于 document | 唯一返回值 | live |
-| ------------------------ | ----------------- | ---------- | ---- |
-| `getElementById()`         | √                 | √          | √    |
-| `getElementsByTagName()`   |                   |            | √    |
-| `getElementsByClassName()` |                   |            | √    |
-| `querySelectorAll()`       |                   |            |      |
-| `querySelector()`          |                   | √          |      |
+|       方法        |       作用       |
+| ----------------- | ---------------- |
+| `removeChild()`   | 删除节点         |
+| `replaceChild()`  | 替换节点         |
+| `appendChild()`   | 插入节点         |
+| `insertBefore()`  | 插入节点         |
+| `hasChildNodes()` | 判断是否有子节点 |
