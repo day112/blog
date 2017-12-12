@@ -6,6 +6,8 @@
   - [HTML转换DOM树](#html转换dom树)
   - [节点遍历](#节点遍历)
   - [元素遍历](#元素遍历)
+- [节点操作](#节点操作)
+  - [获取节点](#获取节点)
 
 <!-- /TOC -->
 
@@ -105,7 +107,7 @@ node.nextSibling;  // null
   </body>
 </html>
 ```
-![20171212183752](http://opd59bmxu.bkt.clouddn.com/20171212183752.png)
+
 ```javascript
 var node = document.getElementsByTagName('h1')[0];
 
@@ -119,3 +121,15 @@ node.previousElementSibling; // <a href="http://www.baidu.com">My Link</a>
 // 获取后一个相邻元素
 node.nextElementSibling;     // <h1 title="123"></h1>
 ```
+
+## 节点操作
+
+### 获取节点
+
+|          API           | 只作用于 document | 唯一返回值 | live |
+| ---------------------- | ----------------- | ---------- | ---- |
+| getElementById         | √                 | √          |      |
+| getElementsByTagName   |                   |            | √    |
+| getElementsByClassName |                   |            | √    |
+| querySelectorAll       |                   |            |      |
+| querySelector          |                   | √          |      |
