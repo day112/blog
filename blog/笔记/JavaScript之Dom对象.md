@@ -87,10 +87,12 @@ node.nextSibling;  // null
 
 ### 元素遍历
 
-- `firstElementChild`获取第一个子元素
-- `lastElementChild`获取最后一个子元素
-- `previousElementSibling`获取前一个相邻元素
-- `nextElementSibling`获取后一个相邻元素
+|           属性           |        作用        |
+| ------------------------ | ------------------ |
+| `firstElementChild`      | 获取第一个子元素   |
+| `lastElementChild`       | 获取最后一个子元素 |
+| `previousElementSibling` | 获取前一个相邻元素 |
+| `nextElementSibling`     | 获取后一个相邻元素 |
 
 
 ```html
