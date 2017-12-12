@@ -1,4 +1,11 @@
+<link rel="stylesheet" href="https://github.com/hua03/blog/blob/master/static/css/markdown.css">
+
 >[原文地址](https://github.com/hua03/blog/blob/master/blog/笔记/JavaScript之Dom对象.md)
+
+<style>
+
+</style>
+
 
 <!-- TOC depthFrom:2 -->
 
