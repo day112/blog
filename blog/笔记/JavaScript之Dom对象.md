@@ -1,4 +1,4 @@
-[地址](https://github.com/hua03/blog/blob/master/blog/笔记/JavaScript之Dom对象.md)
+>[原文地址](https://github.com/hua03/blog/blob/master/blog/笔记/JavaScript之Dom对象.md)
 
 <!-- TOC depthFrom:2 -->
 
@@ -41,10 +41,14 @@
 
 [节点类型](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType)
 
-|-  
+|       属性        |        作用        |
+| ----------------- | ------------------ |
+| `parentNode`      | 获取父节点         |
+| `firstChild`      | 获取第一个子节点   |
+| `lastChild`       | 获取最后一个子节点 |
+| `previousSibling` | 获取后一个相邻节点 |
+| `nextSibling`     | 获取后一个相邻节点 |
 
-- `parentNode` 获取父节点
-- `firstChild` 
 
 ```html
 <!DOCTYPE html>
@@ -67,19 +71,13 @@ var node = document.getElementsByTagName('h1')[0];
 // 获得目标节点的父节点
 node.parentNode; //body
 
-// Node.firstChild
 // 获得目标节点的第一个子节点，不会获取属性节点
 node.firstChild;  // "My header" 
-
-// Node.lastChild
 // 获得目标节点的最后一个子节点
 node.lastChild;  // "My header"
 
-// Node.previousSibling;
 // 获得目标节点的前一个相邻节点
 node.previousSibling;  // <a href="http://www.baidu.com">My Link</a>
-
-// Node.nextSibling;
 // 获得目标节点的下一个相邻节点
 node.nextSibling;  // null
 ```
@@ -107,13 +105,17 @@ node.nextSibling;  // null
   </body>
 </html>
 ```
-
+![20171212183752](http://opd59bmxu.bkt.clouddn.com/20171212183752.png)
 ```javascript
 var node = document.getElementsByTagName('h1')[0];
 
+// 获取第一个子元素
 node.firstElementChild;       // <a href="#">123</a>
+// 获取最后一个子元素
 node.lastElementChild;        // <a href="#">123</a>
 
+// 获取前一个相邻元素
 node.previousElementSibling; // <a href="http://www.baidu.com">My Link</a>
+// 获取后一个相邻元素
 node.nextElementSibling;     // <h1 title="123"></h1>
 ```
