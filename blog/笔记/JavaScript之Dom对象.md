@@ -5,7 +5,6 @@
 - [文档树（DOM树）](#文档树dom树)
   - [HTML转换DOM树](#html转换dom树)
   - [节点遍历](#节点遍历)
-  - [节点类型](#节点类型)
   - [元素遍历](#元素遍历)
 
 <!-- /TOC -->
@@ -40,6 +39,10 @@
 
 ### 节点遍历
 
+[节点类型](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType)
+
+- `parentNode` 获取父节点
+- `firstChild` 
 
 ```html
 <!DOCTYPE html>
@@ -78,9 +81,6 @@ node.previousSibling;  // <a href="http://www.baidu.com">My Link</a>
 // 获得目标节点的下一个相邻节点
 node.nextSibling;  // null
 ```
-
-### 节点类型
-
 
 
 ### 元素遍历
