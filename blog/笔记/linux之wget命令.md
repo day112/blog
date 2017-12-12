@@ -15,7 +15,6 @@
   - [wget 限速下载](#wget-限速下载)
   - [使用 wget 断点续传](#使用-wget-断点续传)
   - [使用 wget 后台下载](#使用-wget-后台下载)
-  - [浏览器代理（伪装）](#浏览器代理伪装)
   - [下载多个文件](#下载多个文件)
   - [镜像网站](#镜像网站)
   - [过滤指定格式文件](#过滤指定格式文件)
@@ -36,7 +35,7 @@ wget (选项) (参数)
 
 ## 选项
 
-| 选项          | 作用                                                        |
+|     选项      |                            作用                             |
 | ------------- | ----------------------------------------------------------- |
 | -a<日志文件>  | 在指定的日志文件中记录资料的执行过程                        |
 | -A<后缀名>    | 指定要下载文件的后缀名，多个后缀名之间使用逗号进行分隔      |
@@ -111,12 +110,6 @@ wget -c http://www.linuxde.net/testfile.zip
 
 ```
 wget -b http://www.linuxde.net/testfile.zip
-```
-
-### 浏览器代理（伪装）
-
-```
-wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" http://www.linuxde.net/testfile.zip
 ```
 
 ### 下载多个文件
