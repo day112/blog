@@ -189,7 +189,7 @@ wget --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/200
 
 ### 整站下载
 
-```
+```shell
 wget -r -p -np -k -e robots=off http://www.baidu.com
 ```
 
