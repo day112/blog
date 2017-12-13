@@ -178,10 +178,12 @@ wget --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/200
 ### 整站下载
 
 ```shell
-wget -r -p -np -k -e robots=off http://www.baidu.com
+wget --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" --limit-rate=300k --random-wait -r -p -np -k -e robots=off http://www.baidu.com
 ```
 
 * `-r` 递归下载
 * `-p` 下载页面必需元素（css，js，img）
 * `-np` 不追溯至父级
 * `-k` 将下载的 HTML 页面中的链接转换为相对链接即本地链接
+* `--random-wait` 每个资源随机等待0.5-1.5s
+* `--limit-rate` 限速
