@@ -147,24 +147,24 @@ elem.addEventListener('click', function(e){
 
 ### 属性
 
-|             属性             | 只读 |                 作用                  |
-| ---------------------------- | ---- | ------------------------------------- |
-| bubbles                      | ✔️   | 表明当前事件是否会向DOM树上层元素冒泡 |
-| cancelable                   | ✔️   | 表明该事件是否可以被取消              |
-| cancelBubble                 |      | 阻止事件冒泡                          |
-| target(srcElement IE 低版本) | ✔️   | 事件触发节点                          |
-| currentTarget                | ✔️   | 处理事件的节点（冒泡，祖先节点）      |
-| type                         | ✔️   | 触发事件的类型                        |
+|                                                             属性                                                              | 只读 |                 作用                  |
+| ----------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------- |
+| [bubbles](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/bubbles)                                                     | ✔    | 表明当前事件是否会向DOM树上层元素冒泡 |
+| [cancelable](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/cancelable)                                               | ✔    | 表明该事件是否可以被取消              |
+| [cancelBubble](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/%E7%A6%81%E7%94%A8%E6%97%B6%E9%97%B4%E5%86%92%E6%B3%A1) |      | 阻止事件冒泡                          |
+| [target(srcElement IE 低版本)](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/target)                                 | ✔    | 事件触发节点                          |
+| [currentTarget](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/currentTarget)                                         | ✔    | 处理事件的节点（冒泡，祖先节点）      |
+| [type](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/type)                                                           | ✔    | 触发事件的类型                        |
 
 
 ### 方法
 
-|            方法            |                                     作用                                     |
-| -------------------------- | ---------------------------------------------------------------------------- |
-| createEvent()              | 创建一个新的事件(自定义事件)                                                 |
-| preventDefault()           | 阻止默认行为（超链接跳转，表单提交，阻止复选框被选中，双击文字时会选中文字） |
-| stopImmediatePropagation() | 阻止同一元素之后的监听函数                                                   |
-| stopPropagation()          | 阻止冒泡                                                                     |
+|                                                     方法                                                      |                                     作用                                     |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [createEvent()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/createEvent)                           | 创建一个新的事件(自定义事件)                                                 |
+| [preventDefault()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)                     | 阻止默认行为（超链接跳转，表单提交，阻止复选框被选中，双击文字时会选中文字） |
+| [stopImmediatePropagation()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopImmediatePropagation) | 阻止同一元素之后的监听函数                                                   |
+| [stopPropagation()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation)                   | 阻止冒泡                                                                     |
 
 
 ## 事件分类
