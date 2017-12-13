@@ -12,6 +12,8 @@
   - [属性](#属性)
   - [方法](#方法)
 - [事件分类](#事件分类)
+  - [Event](#event)
+  - [UIEvent](#uievent)
 - [事件代理](#事件代理)
 
 <!-- /TOC -->
@@ -135,13 +137,15 @@ var addEvent = document.removeElementListener ?
 
 ## 事件对象
 
+调用事件处理函数时传入的信息对象，这个对象中含有关于这个事件的详细状态和信息，它就是事件对象 event。其中可能包含鼠标的位置，键盘信息等。
+
 ```js
 // 获取元素
-var elem = document.getElemenyById('id');
+var el = document.getElemenyById('id');
 
 // 注册事件
-elem.addEventListener('click', function(e){
-  e.cancelBubble = true //阻止冒泡
+el.addEventListener('click', function(event){
+  event.cancelBubble = true //阻止冒泡
 });
 ```
 
@@ -166,7 +170,73 @@ elem.addEventListener('click', function(e){
 | [stopImmediatePropagation()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopImmediatePropagation) | 阻止同一元素之后的监听函数                                                   |
 | [stopPropagation()](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation)                   | 阻止冒泡                                                                     |
 
+```js
+var a = document.getElementsByTagName('a')[0]
+
+a.addEventListener('click', function(event){
+  console.log('100')
+})
+
+a.addEventListener('click', function(event){
+  console.log('200')
+  
+  // 阻止事件冒泡
+  event.stopPropagation()
+
+  // 1.阻止事件冒泡
+  // 2.阻止接下来的监听器 --> 即控制台不会打印出300
+  event.stopImmediatePropagation()
+
+  // 阻止默认行为 --> 超链接不会跳转
+  event.preventDefault()
+})
+
+a.addEventListener('click', function(event){
+  console.log('300')
+})
+```
+
 
 ## 事件分类
+
+### Event
+
+![20171213201911](http://opd59bmxu.bkt.clouddn.com/20171213201911.png)
+
+| 事件类型 | 是否冒泡 |           元素            | 默认事件 |       元素例子        |
+| -------- | -------- | ------------------------- | -------- | --------------------- |
+| load     | NO       | Window, Document, Element | None     | window, image, iframe |
+| unload   | NO       | Window, Document, Element | None     | window                |
+| error    | NO       | Window, Element           | None     | window, image         |
+| select   | NO       | Element                   | None     | input, textarea       |
+| abort    | NO       | Window, Element           | None     | window, image         |
+
+**window**
+- `load` 页面全部加载完毕
+- `unload` 离开本页之前的卸载
+- `error` 页面异常
+- `abort` 取消加载
+
+**image**
+- `load` 图片加载完毕
+- `error` 图标加载错误
+- `abort` 取消图标加载
+
+在目标图标不能正常载入时，载入备份替代图来提高用户体验。
+
+```html
+<img src="http://sample.com/img.png" onerror="this.src='http://sample.com/default.png'">
+```
+
+### UIEvent
+
+| 事件类型 | 是否冒泡 |       元素        | 默认事件 |    元素例子    |
+| -------- | -------- | ----------------- | -------- | -------------- |
+| resize   | NO       | Window, Element   | None     | window, iframe |
+| scroll   | NO/YES   | Document, Element | None     | document, div  |
+
+NOTE：resize 为改变浏览器或iframe的窗体大小时会触发事件，scroll 则会在滑动内容时触发，作用于 Document 则不会冒泡，作用于内部元素则会冒泡。
+
+
 ## 事件代理
 
