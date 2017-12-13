@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <div id="img-container">
+      <img src="http://caibaojian.com/fend_note/img/E/event_flow.jpg" alt="">
+      <p>事件流</p>
+    </div>
+    <div id="a-container">
+      <a id="link" href="http://www.baidu.com">百度</a>
+    </div>
+  </div>
+
+
+  <script>
+    var a = document.getElementById('link'),
+        aContainer = document.getElementById('a-container'),
+        wrap = document.getElementById('wrap'),
+        body = document.body
+
+
+    // body.addEventListener('click', function(e){
+    //   console.log('capture:' + 1 + ' body')
+    // }, true)
+
+    // wrap.addEventListener('click', function(e){
+    //   console.log('capture:' + 2 + ' wrap')
+    // }, true)
+
+    // aContainer.addEventListener('click', function(e){
+    //   console.log('capture:' + 3 + ' a-container')
+    // }, true)
+
+    // a.addEventListener('click', function(e){
+    //   console.log('capture:' + 4 +  ' a')
+    //   e.preventDefault()
+    // }, true)
+
+    body.addEventListener('click', function(e){
+      console.log('capture:' + 1 + ' body')
+      console.log(e.target)
+      console.log(e.currentTarget)
+    })
+
+    wrap.addEventListener('click', function(e){
+      console.log('capture:' + 2 + ' wrap')
+      console.log(e.target)
+      console.log(e.currentTarget)
+    })
+
+    aContainer.addEventListener('click', function(e){
+      console.log('capture:' + 3 + ' a-container')
+      console.log(e.target)
+      console.log(e.currentTarget)
+    })
+
+    a.addEventListener('click', function(e){
+      console.log('capture:' + 4 +  ' a')
+      console.log(e.target)
+      console.log(e.currentTarget)
+      e.preventDefault()
+    })
+
+  </script>
+</body>
+</html>
