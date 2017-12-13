@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    .wrap{
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      background: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+  </div>
+
+  <script>
+    var wrap = document.getElementsByClassName('wrap')[0]
+
+    var count = 0;
+
+    wrap.addEventListener('click', function(event){
+      count++
+      console.log(count+':'+event.type + ': 你点击了div')
+    })
+
+    wrap.addEventListener('dbclick', function(event){
+      count++
+      console.log(count+':'+event.type + ': 你双击了div')
+    })
+
+    wrap.addEventListener('mousedown', function(event){
+      count++
+      console.log(count+':'+event.type + ': 点击鼠标左键')
+    })
+
+    wrap.addEventListener('mouseup', function(event){
+      count++
+      console.log(count+':'+event.type + ': 放开鼠标左键')
+    })
+
+    wrap.addEventListener('mouseover', function(event){
+      count++
+      console.log(count+':'+event.type + ': 进入div')
+    })
+    
+    wrap.addEventListener('mouseout', function(event){
+      count++
+      console.log(count+':'+event.type + ': 离开div')
+    })
+
+    wrap.addEventListener('mousemove', function(event){
+      count++
+      console.log(count+':'+event.type + ': 移动鼠标')
+    })
+
+    wrap.addEventListener('mouseenter', function(event){
+      count++
+      console.log(count+':'+event.type + ': 进入div')
+    })
+    
+    wrap.addEventListener('mouseleave', function(event){
+      count++
+      console.log(count+':'+event.type + ': 离开div')
+    })
+
+
+  </script>
+</body>
+</html>
