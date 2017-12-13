@@ -187,3 +187,5 @@ wget --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/200
 * `-k` 将下载的 HTML 页面中的链接转换为相对链接即本地链接
 * `--random-wait` 每个资源随机等待0.5-1.5s
 * `--limit-rate` 限速
+
+- [] 123
