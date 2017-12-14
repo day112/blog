@@ -62,7 +62,32 @@ javascript 类型系统可以分为基本类型和对象类型，对象类型又
 | --------------------------- | ------------- | -------------------- | ---------- |
 | `typeof`                    | √（null除外） |                      |            |
 | `Object.prototype.toString` | √             | √                    |            |
-| `constructor`               |               | √                    | √          |
+| `constructor`（Undefined/Null 除外）               |               | √                    | √          |
 | `instanceof`                |               | √                    | √          |
+
+
+```js
+// tyoeof
+typeof 0       // "number"
+typeof '132'   // "string"
+typeof undefined // "undefined"
+typeof null // "object"
+typeof [] // "object"
+typeof {} // "object"
+
+// Object.prototype.toString
+Object.prototype.toString.call(123) // "[object Number]"
+Object.prototype.toString.call('abc') // "[object String]"
+Object.prototype.toString.call(null) // "[object Null]"
+Object.prototype.toString.call([]) // "[object Array]"
+
+// constructor
+''.constructor == String //true
+[].constructor == Array //true
+
+// 
+[] instanceof Array // true
+[] instanceof Math // false
+```
 
 
