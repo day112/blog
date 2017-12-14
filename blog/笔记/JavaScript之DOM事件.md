@@ -34,9 +34,9 @@
 
 ![20171213191840](http://opd59bmxu.bkt.clouddn.com/20171213191840.png)
 
-1. **阶段1:**代表Capture Phase（事件捕获过程），当 DOM 事件发生时，它会从window节点一路跑下去直到触发事件元素的父节点为止，去捕获触发事件的元素。
-2. **阶段2:**代表Target Phase（触发目标事件），当事件被捕获之后就开始执行事件绑定的代码
-3. **阶段3:**代表Bubble Phase（冒泡过程）当事件代码执行完毕后，浏览器会从触发事件元素的父节点开始一直冒泡到window元素（即元素的祖先元素也会触发这个元素所触发的事件）
+1. **阶段1:** 代表Capture Phase（事件捕获过程），当 DOM 事件发生时，它会从window节点一路跑下去直到触发事件元素的父节点为止，去捕获触发事件的元素。
+2. **阶段2:** 代表Target Phase（触发目标事件），当事件被捕获之后就开始执行事件绑定的代码
+3. **阶段3:** 代表Bubble Phase（冒泡过程）当事件代码执行完毕后，浏览器会从触发事件元素的父节点开始一直冒泡到window元素（即元素的祖先元素也会触发这个元素所触发的事件）
 
 **注意：**
 1. 低版本的IE中没有实现捕获的过程
@@ -130,7 +130,7 @@ var addEvent = document.addEventListener ?
   }
 
 // 取消事件
-var addEvent = document.removeElementListener ?
+var removeEvent = document.removeElementListener ?
   function(elem, type, listener, useCapture) {
     elem.removeElementListener(type, listener, useCapture);
   } :
@@ -288,7 +288,6 @@ mousedown -> [mousemove, ...] -> mouseup -> click
 
 ### 滚轮事件（Wheel）
 
-[事件属性](https://developer.mozilla.org/zh-CN/docs/Web/Events/wheel)
 
 |                              事件类型                              | 是否冒泡 |  元素   |        默认事件         | 元素例子 |
 | ------------------------------------------------------------------ | -------- | ------- | ----------------------- | -------- |
