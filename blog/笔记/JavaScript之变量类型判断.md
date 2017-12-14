@@ -18,7 +18,9 @@
 
 | 方法                        | 基本类型 | 对象类型（内置对象）      | 自定义对象 |
 | --------------------------- | -------- | ----------------------- | ---------- |
-| `typeof`                    | ✔️       |                           |            |
-| `Object.prototype.toString` | ✔️       | ✔️                        |            |
-| `constructor`               |          | ✔️                        | ✔️         |
-| `instanceof`                |          | ✔️                        | ✔️         |
+| `typeof`                    | √       |                           |            |
+| `Object.prototype.toString` | √       | √                        |            |
+| `constructor`               |          | √                        | √         |
+| `instanceof`                |          | √                        | √         |
+
+
