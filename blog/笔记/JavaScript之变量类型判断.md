@@ -58,12 +58,12 @@ javascript 类型系统可以分为基本类型和对象类型，对象类型又
 
 ## 类型判断
 
-|            方法             |   基本类型    | 对象类型（内置对象） | 自定义对象 |
-| --------------------------- | ------------- | -------------------- | ---------- |
-| `typeof`                    | √（null除外） |                      |            |
-| `Object.prototype.toString` | √             | √                    |            |
-| `constructor`（Undefined/Null 除外）               |               | √                    | √          |
-| `instanceof`                |               | √                    | √          |
+|            方法             |         基本类型          | 对象类型（内置对象） | 自定义对象 |
+| --------------------------- | ------------------------- | -------------------- | ---------- |
+| `typeof`                    | √（null除外）             |                      |            |
+| `Object.prototype.toString` | √                         | √                    |            |
+| `constructor`               | √ （Undefined/Null 除外） |                      | √          |
+| `instanceof`                |                           | √                    | √          |
 
 
 ```js
@@ -85,7 +85,7 @@ Object.prototype.toString.call([]) // "[object Array]"
 ''.constructor == String //true
 [].constructor == Array //true
 
-// 
+// instanceof
 [] instanceof Array // true
 [] instanceof Math // false
 ```
