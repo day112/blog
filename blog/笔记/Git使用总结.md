@@ -12,7 +12,7 @@
 
 # 目录
 
-<!-- TOC depthFrom:2 -->
+<!-- TOC depthFrom:2 depthTo:3 -->
 
 - [1. Git命令](#1-git命令)
   - [1.1. 创建项目](#11-创建项目)
@@ -24,6 +24,7 @@
 - [2. Git配置](#2-git配置)
   - [2.1. 用户信息](#21-用户信息)
   - [2.2. 默认编辑器](#22-默认编辑器)
+  - [2.3. 配置SSH](#23-配置ssh)
 - [3. 获取仓库](#3-获取仓库)
   - [3.1. 初始化仓库](#31-初始化仓库)
   - [3.2. 克隆已有的仓库](#32-克隆已有的仓库)
@@ -103,6 +104,36 @@ git config --global user.email "useremail@gmail.com"
 ```bash
 git config --global core.editor vim
 ```
+
+### 2.3. 配置SSH
+
+#### 1. 创建 SSH Key。
+
+> **注意：** Linux的用户目录一般是`~/`文件夹；Windows下可以使用`cd %USERPROFILE%`来获取当前用户的路径。
+
+在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开 Shell（Windows下打开Git Bash），创建SSH Key：
+
+```bash
+ssh-keygen -t rsa -C "youremail@example.com"
+```
+
+该命令会在用户目录中生成`.ssh`文件夹，里面包含两个文件`id_rsa`和`id_rsa.pub`。这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉别人。
+
+#### 2. 添加`SSH Keys`
+
+然后登录GitHub -> 打开`Settings` -> `SSH and GPG keys` -> 点`Add SSH Key`
+
+填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。（**注意：**复制秘钥时，多余的空格会导致秘钥添加失败）。
+
+![配置SSH](http://opd59bmxu.bkt.clouddn.com/20171217223328.png)
+
+#### 3. 注意事项
+
+- 复制秘钥时，多余的空格会导致秘钥添加失败
+- 只有`SSH`协议才能不用输入密码，`https`协议不行。也就是说在克隆或者添加remote的时候只能使用`SSH协议`。
+
+![克隆仓库选择SSH协议](http://opd59bmxu.bkt.clouddn.com/2017121722459.png)
+
 
 ## 3. 获取仓库
 
