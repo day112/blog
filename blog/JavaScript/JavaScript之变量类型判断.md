@@ -62,12 +62,23 @@ javascript 类型系统可以分为基本类型和对象类型，对象类型又
 | --------------------------- | ------------------------- | -------------------- | ---------- |
 | `typeof`                    | √（null除外）             |                      |            |
 | `Object.prototype.toString` | √                         | √                    |            |
-| `constructor`               | √ （Undefined/Null 除外） |                      | √          |
+| `constructor`               | √ （Undefined/Null 除外） |  √                    | √          |
 | `instanceof`                |                           | √                    | √          |
 
+> **缺点:**
+- Object.prototype.toString
+  - 只能检测内置类型
+- 构造函数`constructor`
+  - `undefined`和`null`没有构造函数无法检测
+  - 无法直接检测`number`
+  - 函数的 constructor 是不稳定的，这个主要体现在自定义对象上，当开发者重写 prototype 后，原有的 constructor 引用会丢失，constructor 会默认为 Object
+- instanceof
+  - instanceof从原型链上检测
+  - 只能检测`对象类型` 
 
 ```js
 // tyoeof
+// ========
 typeof 0       // "number"
 typeof '132'   // "string"
 typeof undefined // "undefined"
@@ -75,19 +86,56 @@ typeof null // "object"
 typeof [] // "object"
 typeof {} // "object"
 
+
+
 // Object.prototype.toString
+// =========================
 Object.prototype.toString.call(123) // "[object Number]"
 Object.prototype.toString.call('abc') // "[object String]"
 Object.prototype.toString.call(null) // "[object Null]"
 Object.prototype.toString.call([]) // "[object Array]"
 
+function person(){
+    this.name = 'zhangsan'
+}
+var zhangsan = new person()
+Object.prototype.toString.call(zhangsan) //"[object Object]"
+
+
 // constructor
+// ===========
 ''.constructor == String //true
 [].constructor == Array //true
+[].constructor === Array //true
+
+function person (){
+    this.name = 'zhangsan'
+}
+var lisi = new person()
+lisi.constructor === person   //true
+
+//修改原型会导致constructor判断失效
+person.prototype = []
+var zhangsan = new person()
+zhangsan.constructor === person  //false
+
 
 // instanceof
-[] instanceof Array // true
-[] instanceof Math // false
+// ===========
+123 instanceof Number //false
+new Number(123) instanceof Number //true
+
+[] instanceof Array //true
+[] instanceof Object //true
+
+function person(){
+    this.name = 'zhangsan'
+}
+var zhangsan = new person()
+zhangsan instanceof person //true
+zhangsan instanceof Object //true
 ```
 
 
+[判断 ECMAScript 数据类型的4种方法](http://www.cnblogs.com/onepixel/p/5126046.html)
+[如何检查JavaScript变量类型？](http://harttle.com/2015/09/18/js-type-checking.html)
