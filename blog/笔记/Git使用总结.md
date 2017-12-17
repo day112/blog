@@ -87,7 +87,6 @@
   -  [rebase](https://git-scm.com/docs/git-rebase)  把一个分支的修改合并到当前分支   
   -  [revert](https://git-scm.com/docs/git-revert)版本回退，取消提交返回上一版本   
 
-
 ## 2. Git配置
 
 `~/.gitconfig`是git的配置文件
