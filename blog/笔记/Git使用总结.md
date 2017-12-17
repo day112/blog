@@ -88,10 +88,6 @@
   -  [revert](https://git-scm.com/docs/git-revert)版本回退，取消提交返回上一版本   
 
 
-
-
-
-
 ## 2. Git配置
 
 `~/.gitconfig`是git的配置文件
