@@ -1,6 +1,5 @@
 # DOM事件
 
-> [原文地址](https://github.com/hua03/blog/blob/master/blog/JavaScript/JavaScript之DOM事件.md)
 
 <!-- TOC depthFrom:2 -->
 

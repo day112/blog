@@ -1,6 +1,5 @@
 # Dom对象
 
->[原文地址](https://github.com/hua03/blog/blob/master/blog/JavaScript/JavaScript之Dom对象.md)
 
 <!-- TOC depthFrom:2 -->
 

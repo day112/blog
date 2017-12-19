@@ -1,6 +1,5 @@
 # Node模块
 
-[原文地址](https://github.com/hua03/blog/blob/master/blog/node/Node模块.md)
 
 ## path
 

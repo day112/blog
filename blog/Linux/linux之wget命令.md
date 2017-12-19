@@ -1,6 +1,5 @@
 # [wget 命令](http://man.linuxde.net/wget)
 
-> [原文地址](https://github.com/hua03/blog/blob/master/blog/Linux/linux之wget命令.md)
 
 [wget 命令](http://man.linuxde.net/wget)用来从指定的 URL 下载文件。
 

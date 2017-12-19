@@ -1,6 +1,5 @@
 # Git使用总结
 
-[原文地址](https://github.com/hua03/blog/blob/master/blog/笔记/Git使用总结.md#L3)
 
 **参考站点：**
 
@@ -121,9 +120,11 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 #### 2. 添加`SSH Keys`
 
-然后登录GitHub -> 打开`Settings` -> `SSH and GPG keys` -> 点`Add SSH Key`
-
-填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。（**注意：**复制秘钥时，多余的空格会导致秘钥添加失败）。
+1. 登录GitHub  
+2. 打开`Settings` 
+3. 选择`SSH and GPG keys` 
+4. 点`Add SSH Key`
+5. Title任意填一个，Key文本框里粘贴id_rsa.pub文件的内容。（**注意：** 复制秘钥时，多余的空格会导致秘钥添加失败）。
 
 ![配置SSH](http://opd59bmxu.bkt.clouddn.com/20171217223328.png)
 
