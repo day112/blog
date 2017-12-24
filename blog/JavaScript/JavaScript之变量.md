@@ -27,11 +27,11 @@ javascript 类型系统可以分为基本类型和对象类型，对象类型又
 
 #### 1.1.1. 基础类型（值类型）
 
-- Undefined 
-- Null 
-- Boolean 
-- String 
-- Number 
+- Undefined
+- Null
+- Boolean
+- String
+- Number
 - Symbol（ES6新增）
 
 #### 1.1.2. 引用类型（对象类型）
@@ -79,7 +79,7 @@ javascript 类型系统可以分为基本类型和对象类型，对象类型又
   - 函数的 constructor 是不稳定的，这个主要体现在自定义对象上，当开发者重写 prototype 后，原有的 constructor 引用会丢失，constructor 会默认为 Object
 - instanceof
   - instanceof从原型链上检测
-  - 只能检测`对象类型` 
+  - 只能检测`对象类型`
 
 ```js
 // ========
@@ -92,7 +92,6 @@ typeof undefined // "undefined"
 typeof null // "object"
 typeof [] // "object"
 typeof {} // "object"
-
 
 
 // =========================

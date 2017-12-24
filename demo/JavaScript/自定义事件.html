@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap" class="wrap">
+    123
+  </div>
+
+  <script>
+    const wrap = document.getElementById('wrap')
+    const event = document.createEvent('UIEvent')
+    event.initEvent('click2', true, false)
+
+    wrap.addEventListener('click2', function (event) {
+      console.log(event)
+    })
+
+    wrap.dispatchEvent(event)
+  </script>
+</body>
+</html>

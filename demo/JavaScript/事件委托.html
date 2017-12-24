@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="wrap">
+    <li id="orange">orange</li>
+    <li id="apple">apple</li>
+    <!-- <li id="banner">banner</li> -->
+    <li id="banner">
+      <input type="text" value="123" id="inp">
+    </li>
+  </ul>
+
+  <script>
+    const wrap = document.getElementById('wrap')
+    wrap.addEventListener('click', function (event) {
+      // console.log(event.currentTarget.baseURI)
+      console.log(wrap.baseURI)
+      switch (event.target.id) {
+        case 'orange':
+          console.log('我是banner')
+          break;
+        case 'apple':
+          console.log('我才不是banner');
+          break;
+        default:
+          break;
+      }
+    })
+    // wrap.addEventListener('blur', function (event) {
+    //   console.log(event.target)
+    // })
+
+    const input = document.getElementById('inp')
+    input.addEventListener('focus', (event) => {
+      console.log('你获得了键盘焦点')
+    })
+    input.addEventListener('blur', (event) => {
+      console.log('你失去了键盘焦点')
+    })
+
+  </script>
+</body>
+</html>

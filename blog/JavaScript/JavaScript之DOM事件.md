@@ -1,6 +1,4 @@
 # DOM事件
-
-
 <!-- TOC depthFrom:2 -->
 
 - [事件流](#事件流)
@@ -22,7 +20,10 @@
   - [FocusEvent](#focusevent)
   - [InputEvent](#inputevent)
   - [KeyboardEvent](#keyboardevent)
-- [事件代理](#事件代理)
+- [性能和内存](#性能和内存)
+  - [事件委托](#事件委托)
+  - [移除事件](#移除事件)
+- [自定义事件（重写事件）](#自定义事件重写事件)
 
 <!-- /TOC -->
 
@@ -160,7 +161,7 @@ el.addEventListener('click', function(event){
 | [bubbles](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/bubbles)                                                     | ✔    | 表明当前事件是否会向DOM树上层元素冒泡 |
 | [cancelable](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/cancelable)                                               | ✔    | 表明该事件是否可以被取消              |
 | [cancelBubble](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/%E7%A6%81%E7%94%A8%E6%97%B6%E9%97%B4%E5%86%92%E6%B3%A1) |      | 阻止事件冒泡                          |
-| [target(srcElement IE 低版本)](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/target)                                 | ✔    | 事件触发节点                          |
+| [target(srcElement IE 低版本)](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/target)                                 | ✔    | 事件触发节点  (返回节点对象的引用，与`getElementById()`返回的对象想同)                        |
 | [currentTarget](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/currentTarget)                                         | ✔    | 处理事件的节点（冒泡，祖先节点）      |
 | [type](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/type)                                                           | ✔    | 触发事件的类型                        |
 
@@ -183,7 +184,7 @@ a.addEventListener('click', function(event){
 
 a.addEventListener('click', function(event){
   console.log('200')
-  
+
   // 阻止事件冒泡
   event.stopPropagation()
 
@@ -307,6 +308,8 @@ mousedown -> [mousemove, ...] -> mouseup -> click
 
 
 NOTE：`blur` 失去焦点时，`focus` 获得焦点时，`focusin` 即将获得焦点，`focusout` 即将失去焦点。
+Chrome中只有input这类需要输入文本的标签才有这些事件。
+
 
 ### InputEvent
 
@@ -332,17 +335,37 @@ NOTE：`blur` 失去焦点时，`focus` 获得焦点时，`focusin` 即将获得
 | [keyup](https://developer.mozilla.org/zh-CN/docs/Web/Events/keyup)     | YES      | Element | None                                    | div, input |
 
 
-## 事件代理
+## 性能和内存
 
-事件代理是指在父节点上（可为元素最近的父节点也可为上层的其他节点）处理子元素上触发的事件，其原理是通过事件流机制而完成的。可以通过事件对象中获取到触发事件的对象（如下所示）。
+### 事件委托
+
+事件委托是指在父节点上（可为元素最近的父节点也可为上层的其他节点）处理子元素上触发的事件，其原理是通过事件流机制而完成的。可以通过事件对象中获取到触发事件的对象（如下所示）。
+`event.target`会获取一个目标对象的引用，和`getElementById()`获取的是同一个引用
+
+```html
+  <ul id="wrap">
+    <li id="orange">orange</li>
+    <li id="apple">apple</li>
+    <!-- <li id="banner">banner</li> -->
+    <li id="banner">
+      <input type="text" value="123" id="inp">
+    </li>
+  </ul>
+```
 
 ```js
-var elem = document.getElemenyById('id');
-elem.addEventListener('click', function(event) {
-  var e = event || window.event;
-  var target = e.target || e.srcElement;
-  // statements
-});
+const wrap = document.getElementById('wrap')
+wrap.addEventListener('click', function (event) {
+  switch (event.target.id) {
+    case 'orange':
+      console.log('我是banner')
+      break;
+    case 'apple':
+      console.log('我才不是banner');
+      break;
+    default:
+      break;
+  }
 ```
 
 **优点**
@@ -354,3 +377,21 @@ elem.addEventListener('click', function(event) {
 **缺点**
 
 - 事件管理的逻辑变的复杂（因为冒泡机制）
+
+### 移除事件
+
+```js
+// 获取元素
+var elem = document.getElemenyById('id');
+
+// 方式1 取消事件
+// 这种方式不能使用匿名的处理函数， 即不能使用 el.addEventListener('click', function(){ ... })
+elem.removeEventListener('click', clickHandler, false);
+
+// 方式2 不建议使用
+elem.onclick = null;
+```
+
+## 自定义事件（重写事件）
+
+[JavaScript 自定义事件](https://juejin.im/entry/57a4a7427db2a2005a98bcf0)
