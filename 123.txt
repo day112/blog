@@ -1,0 +1,6 @@
+		var appId = <?php echo $jsApiParameters["appId"]?>;
+		var timestamp = <?php echo $jsApiParameters->timeStamp?>;
+		var nonceStr = <?php echo $jsApiParameters->nonceStr?>
+		var signature = <?php echo $jsApiParameters->paySign?>;
+		var signType = <?php echo $jsApiParameters->signType?>;
+		var package = <?php echo $jsApiParameters->package?>;

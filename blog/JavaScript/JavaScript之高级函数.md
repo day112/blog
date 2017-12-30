@@ -50,3 +50,53 @@ const lisi = Person('lisi', 19, 'student')
 console.log(window.name) // ""
 console.log(lisi.name) // 'lisi'
 ```
+
+## 惰性函数
+
+```js
+function addListener (el, type, handler) {
+  if (document.addEventListener) {
+    el.addEventListener(type, handler)
+  } else {
+    el.attachEvent('on' + type, handler)
+  }
+}
+```
+
+> 惰性函数重构版一
+
+```js
+function addListener (el, type, handler) {
+  if (document.addEventListener) {
+    // 重新给函数赋值
+    addListener = function (el, type, handler) {
+      el.addEventListener(type, handler)
+    }
+  } else {
+    addListener = function (el, type, handler) {
+      el.attachEvent('on' + type, handler)
+    }
+  }
+}
+```
+
+> 惰性函数重构版二
+
+```js
+var addListener = (function (el, type, handler) {
+  if (document.addEventListener) {
+    return function (el, type, handler) {
+      return el.addEventListener(type, handler)
+    }
+  } else {
+    return function (el, type, handler) {
+      return el.attachEvent('on' + type, handler)
+    }
+  }
+}())
+```
+
+> 使用惰性函数，只有初次调用的时候会执行判断，之后再调用不会执行判断
+
+[JavaScript专题之惰性函数](https://github.com/mqyqingfeng/Blog/issues/44)
+

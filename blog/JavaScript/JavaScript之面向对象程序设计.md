@@ -22,6 +22,10 @@
   - [4.4. 原型式继承](#44-原型式继承)
   - [4.5. 寄生式继承](#45-寄生式继承)
   - [4.6. 寄生组合继承](#46-寄生组合继承)
+- [5. 对象防篡改](#5-对象防篡改)
+  - [5.1. 禁止对象扩展](#51-禁止对象扩展)
+  - [5.2. 密封对象](#52-密封对象)
+  - [5.3. 冻结对象](#53-冻结对象)
 
 <!-- /TOC -->
 
@@ -79,7 +83,7 @@ p2.hasOwnProperty('name') // false
 
 
 console.log(p1.name)  // "Nicholas" ———— 来自原型
-p1.hasOwnProperty('name')  // 
+p1.hasOwnProperty('name')  //
 ```
 
 
@@ -163,7 +167,7 @@ Object.defineProperties(book, {
 	   value: 2014
    },
    edition: {
-      value: 1  
+      value: 1
    },
    year: {
       get: function(){
@@ -173,7 +177,7 @@ Object.defineProperties(book, {
          this._year += val
       }
    }
-}) 
+})
 ```
 
 > `Object.getOwnPropertyDescriptor(obj, prop)`获取单个属性的描述符
@@ -186,7 +190,7 @@ Object.defineProperties(book, {
 	   value: 2014
    },
    edition: {
-      value: 1  
+      value: 1
    },
    year: {
       get: function(){
@@ -196,7 +200,7 @@ Object.defineProperties(book, {
          this._year += val
       }
    }
-}) 
+})
 
 var descriptor = Object.getOwnPropertyDescriptor(book, "year")
 console.log(descriptor) // ==> {enumerable: false, configurable: false, get: ƒ, set: ƒ}
@@ -212,7 +216,7 @@ Object.defineProperties(book, {
 	   value: 2014
    },
    edition: {
-      value: 1  
+      value: 1
    },
    year: {
       get: function(){
@@ -222,7 +226,7 @@ Object.defineProperties(book, {
          this._year += val
       }
    }
-}) 
+})
 
 var descriptor = Object.getOwnPropertyDescriptors(book)
 console.log(descriptor) // ==> {_year: {…}, edition: {…}, year: {…}}
@@ -436,7 +440,7 @@ nico.getType() // --> animal
 
 > **优缺点**
 
-**缺点：** 
+**缺点：**
 1. 父类的实例属性（通过构造函数定义的属性），会变成子类的原型属性
 2. 创建子类实例时，不能向父类的构造函数传递参数
 
@@ -448,7 +452,7 @@ nico.getType() // --> animal
 	- 给子类原型定义与父类同名的方法，会屏蔽掉父类的方法
 	- 将父类的实例赋值给子类原型后，不允许再给子类原型`prototype`赋值，不然会**切断原型链**
 
->**Tips:** 
+>**Tips:**
 
 `window`是`Object`的一个子类，`Object`是`window`的原型
 
@@ -517,7 +521,7 @@ Cat.prototype = new Animal()  // 父类原型
 var nico = new Cat('nico', 2, 'dog')
 ```
 
-**注意：** 
+**注意：**
 - 通过构造函数生成的引用类型数据不会共享，比如数组。因此，不想要共享的数据都要通过构造函数生成
 
 > 优缺点
@@ -580,7 +584,7 @@ function createAnthor(obj){
 
 1. 通过寄生构造函数将子类的原型和父类联系起来，避免每次实例化都会调用
 
-> 实现 
+> 实现
 
 ```javascript
 function Animal(type){
@@ -606,4 +610,87 @@ function inheritPrototype(subObj, superObj){
 inheritPrototype(Cat, Animal)
 
 var cc = new Cat('cc', 'cat')
+```
+
+## 5. 对象防篡改
+
+由于对象的共享本质，任何对象都能被同一运行环境中的代码修改。开发人员也可能会意外的修改对象。为了保证对象的正常，可以对对象进行防篡改设置。
+
+> **注意：** 防篡改设置完后，不能撤销
+
+### 5.1. 禁止对象扩展
+
+禁止对象扩展后，对象不能添加新方法和属性
+
+```js
+var nico = {name: 'nico'}
+// 禁止对象扩展
+Object.preventExtensions(nico)
+
+person.age = 29
+console.log(person.age) //undefined
+```
+
+### 5.2. 密封对象
+
+密封对象后，只能执行一个操作（修改属性的值，或者重新给方法赋值也行）。
+
+```js
+var nico = {
+  name: "nico",
+  say: function () {
+    console.log(this.name)
+  }
+}
+// 禁止对象扩展
+Object.seal(nico)
+
+// 1. 能修改属性值，无论属性的值是基本类型还是对象
+nico.name = 'zhangsan'
+console.log(nico.name) //'zhangsan'
+
+// 2.能修改方法
+nico.say = function (){
+  console.log('my name is ' + this.name)
+}
+nico.say() // my name is zhangsan
+
+// 3.不能添加新属性
+person.age = 29
+console.log(person.age) //undefined
+
+// 4.不能删除属性
+delete nico.name
+console.log(nico.name) //'zhangsan'
+```
+
+### 5.3. 冻结对象
+
+被冻结对象自身的所有属性都不可能以任何方式被修改。冻结只涉及对象本身，如果属性中包含对象类型，不会冻结改对象。
+
+```js
+var nico = {
+  name: "nico",
+  friends: ['zhansgan', 'lisi', ['王五', '赵六']]
+  say: function () {
+    console.log(this.name)
+  }
+}
+Object.freeze(nico)
+
+// 深度冻结
+function deepFrozen (obj) {
+  var props = Object.getOwnPropertyNames(obj)
+
+  props.forEach(function (name) {
+    var prop = obj[name]
+    if (typeof prop === 'object' && prop !== null) {
+      deepFrozen(prop)
+    }
+  })
+
+  return Object.freeze(obj)
+}
+
+deepFrozen(nico)
 ```
