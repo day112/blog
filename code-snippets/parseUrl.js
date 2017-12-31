@@ -1,13 +1,13 @@
 
 /**
  * 将字符串url转化为url对象
- * 
- * @param {String} url  
+ *
+ * @param {String} url
  */
-function parseURL(url) {
-  var a = document.createElement('a');
+function parseURL (url) {
+  var a = document.createElement('a')
   //创建一个链接
-  a.href = url;
+  a.href = url
   return {
     source: url,
     protocol: a.protocol.replace(':', ''),
@@ -19,20 +19,20 @@ function parseURL(url) {
         seg = a.search.replace(/^\?/, '').split('&'),
         len = seg.length,
         i = 0,
-        s;
+        s
       for (; i < len; i++) {
         if (!seg[i]) {
-          continue;
+          continue
         }
-        s = seg[i].split('=');
-        ret[s[0]] = s[1];
+        s = seg[i].split('=')
+        ret[s[0]] = s[1]
       }
-      return ret;
+      return ret
     })(),
     file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
     hash: a.hash.replace('#', ''),
     path: a.pathname.replace(/^([^\/])/, '/$1'),
     relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
     segments: a.pathname.replace(/^\//, '').split('/')
-  };
+  }
 }

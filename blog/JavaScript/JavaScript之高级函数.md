@@ -1,4 +1,4 @@
-## 构造函数的安全性
+## 安全的构造函数
 
 使用new操作符调用构造函数时，构造函数内部的this会指向新创建的对象。如果将构造函数当成普通函数使用的话，此时的this指向未知，会造成命名空间的污染，比如：
 
@@ -69,10 +69,12 @@ function addListener (el, type, handler) {
 function addListener (el, type, handler) {
   if (document.addEventListener) {
     // 重新给函数赋值
+    el.addEventListener(type, handler)
     addListener = function (el, type, handler) {
       el.addEventListener(type, handler)
     }
   } else {
+    el.attachEvent('on' + type, handler)
     addListener = function (el, type, handler) {
       el.attachEvent('on' + type, handler)
     }
@@ -83,7 +85,7 @@ function addListener (el, type, handler) {
 > 惰性函数重构版二
 
 ```js
-var addListener = (function (el, type, handler) {
+var addListener = (function () {
   if (document.addEventListener) {
     return function (el, type, handler) {
       return el.addEventListener(type, handler)
