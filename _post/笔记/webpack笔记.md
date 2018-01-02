@@ -1,1 +1,5 @@
 - [分离css单独打包](https://www.jianshu.com/p/439764e3eff2)
+- [从gulp切换到webpack](https://www.valentinog.com/blog/from-gulp-to-webpack-quickstart/)
+- [静态资源热更新](https://github.com/ruanyf/webpack-demos#demo15-hot-module-replacement-source)
+
+- devtool会减慢热更新的速度

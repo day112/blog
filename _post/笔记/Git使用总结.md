@@ -28,6 +28,7 @@
   - [3.1. 初始化仓库](#31-初始化仓库)
   - [3.2. 克隆已有的仓库](#32-克隆已有的仓库)
 - [4. 分支管理](#4-分支管理)
+  - [本地分支关联远程库](#本地分支关联远程库)
 - [5. 撤销操作](#5-撤销操作)
   - [5.1. 撤销commit信息](#51-撤销commit信息)
   - [5.2. 取消暂存（add）的文件](#52-取消暂存add的文件)
@@ -152,6 +153,8 @@ git clone <url> <dirname>
 
 ## 4. 分支管理
 
+
+
 ```bash
 #列出所有分支
 git branch
@@ -163,7 +166,16 @@ git branch <new branchname>
 git checkout <branchname>
 ```
 
- 
+### 本地分支关联远程库
+
+这两条命令是一样的
+
+```bash
+git branch --set-upstream-to=origin/master
+
+git branch -u origin/master
+```
+
 
 ## 5. 撤销操作
 
