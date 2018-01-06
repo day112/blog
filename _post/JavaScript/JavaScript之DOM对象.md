@@ -50,13 +50,17 @@
 
 ### 获取节点
 
-|                                                     API                                                      | 只作用于 document | 唯一返回值 | live |
-| ------------------------------------------------------------------------------------------------------------ | ----------------- | ---------- | ---- |
-| [getElementById()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementById)                 | √                 | √          | √    |
-| [getElementsByTagName()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementsByTagName)     |                   |            | √    |
-| [getElementsByClassName()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementsByClassName) |                   |            | √    |
-| [querySelectorAll()](https://developer.mozilla.org/zh-CN/docs/Web/API/ParentNode/querySelectorAll)           |                   |            |      |
-| [querySelector()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector)                   |                   | √          |      |
+|                                                     API                                                      | 只作用于 document | 唯一返回值 | live | 特点 |
+| ------------------------------------------------------------------------------------------------------------ | ----------------- | ---------- | ---- | ---- |
+| [getElementById()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementById)                 | √                 | √          | √    |      |
+| [getElementsByTagName()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementsByTagName)     |                   |            | √    |      |
+| [getElementsByClassName()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementsByClassName) |                   |            | √    |      |
+| [querySelectorAll()](https://developer.mozilla.org/zh-CN/docs/Web/API/ParentNode/querySelectorAll)           |                   |            |      |      |
+| [querySelector()](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector)                   |                   | √          |      |      |
+
+差异
+
+- querySelector的性能比getElementById差一倍，比getElementsByClassName差10倍左右。
 
 ### 节点遍历
 

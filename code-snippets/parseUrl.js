@@ -1,9 +1,4 @@
 
-/**
- * 将字符串url转化为url对象
- *
- * @param {String} url
- */
 function parseURL (url) {
   var a = document.createElement('a')
   //创建一个链接

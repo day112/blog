@@ -2,4 +2,8 @@
 - [从gulp切换到webpack](https://www.valentinog.com/blog/from-gulp-to-webpack-quickstart/)
 - [静态资源热更新](https://github.com/ruanyf/webpack-demos#demo15-hot-module-replacement-source)
 
-- devtool会减慢热更新的速度
+- 热加载无法更新页面
+  - 检查devtool的设置
+  - 生产环境和开发环境所用的配置分开
+
+

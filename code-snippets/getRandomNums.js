@@ -1,11 +1,11 @@
-
-/**
- * 获取不重复的随机数组
- * @param {Number} len 数组长度
- * @param {Number} maxLen 最大随机数
- * @returns {Array} 随机数组
+/*
+ * @Author: hua03 
+ * @Date: 2018-01-04 09:38:19 
+ * @Last Modified by:   hua03 
+ * @Last Modified time: 2018-01-04 09:38:19 
  */
-function getRandomNums (len, maxLen) {
+
+function getRandomNums(len, maxLen) {
   const randomNums = []
   let random = 0
   for (let index = 0; index < maxLen; index++) {
