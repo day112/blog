@@ -61,7 +61,7 @@ body{
   width: 20px;
   height: 20px;
   color: blue;
-  border: 10px solid ;
+  border: 10px solid;
   border-color: inherit;
   /* 祖先元素没有设置 background无法继承 */
   background: inherit;
