@@ -1,5 +1,23 @@
 # 使用 PDO 操作数据库
 
+## 添加测试数据
+
+```sql
+create database test;
+
+CREATE TABLE `user` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `username` char(11) NOT NULL,
+    `password` char(11) NOT NULL,
+    `create_time` int(10) unsigned NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `user` VALUES ('1', 'wang','14654', '1501109027');
+INSERT INTO `user` VALUES ('2', 'meng', '14654','1501109026');
+INSERT INTO `user` VALUES ('3', 'liu', '14654', '1501009027');
+INSERT INTO `user` VALUES ('4', 'yuan', '14654','1500109027');
+```
+
 ## API
 
 ```php
