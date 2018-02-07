@@ -14,7 +14,10 @@ function printResult($result, $str = '')
 $db = DB::getStringleton('localhost', 'test', 'root', '');
 
 // 执行sql
-$result = $db->queryString('select * from user where id=:id limit 0,3', array(':id'=>'123'));
+$result = $db->exec('select * from user where id=:id limit 0,3', array(':id'=>'123'));
+printResult($result, '执行SQL');
+
+$result = $db->exec('select * from user where id="99" limit 0,5');
 printResult($result, '执行SQL');
 
 // 查询表

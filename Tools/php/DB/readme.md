@@ -18,7 +18,7 @@ INSERT INTO `user` VALUES ('3', 'liu', '14654', '1501009027');
 INSERT INTO `user` VALUES ('4', 'yuan', '14654','1500109027');
 ```
 
-## API
+## 测试
 
 ```php
 $db = DB::getStringleton('localhost', 'test', 'root', '');

@@ -58,7 +58,7 @@ class DB
      * @param array $where 条件数据
      * @return mixed 成功数组
      */
-    public function queryString($sql, $where=array())
+    public function exec($sql, $where=array())
     {
         try {
             //使用预处理语句来执行sql
