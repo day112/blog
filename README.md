@@ -15,10 +15,10 @@
 
 
 <div align="center">
-  如果想要关注我，请点 `star` 或者 `floow` 。
+  如果想要关注我，请点 <b>star</b> 或者 <b>star</b> 。
 </div>
 <div align="center">
-  如果想要订阅我的博客，请点 `watch` 。
+  如果想要订阅我的博客，请点 <b>watch</b> 。
 </div>
 
 
