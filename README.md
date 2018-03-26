@@ -1,4 +1,6 @@
-<div align="center">HuaHao's Blog</div>
+<div align="center">
+  <img src="http://opd59bmxu.bkt.clouddn.com/201818261534-S.png"></img>
+</div>
 
 <p align="center">
   <b>注意事项</b>
