@@ -1,4 +1,4 @@
-<div align="center" color="red">HuaHao's Blog</div>
+<div align="center">HuaHao's Blog</div>
 
 <p align="center">
   <b>注意事项</b>
