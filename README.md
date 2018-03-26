@@ -1,3 +1,6 @@
+<style>
+ h2{font-size: 50px}
+</style>
 <h2 align="center">HuaHao's Blog</h2>
 
 <p align="center">
