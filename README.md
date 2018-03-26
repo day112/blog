@@ -13,8 +13,15 @@
 </p>
 
 <p align="center">
-  如果想要关注我，请点 `star` 或者 `floow` 。如果想要订阅我的博客，请点 `watch` , **注意** :点 `watch` 后，我每次发博客或者博客中讨论问题，都会给你发信息。
+  <div align="center">
+    如果想要关注我，请点 `star` 或者 `floow` 。
+  </div>
+  <div align="center">
+    如果想要订阅我的博客，请点 `watch` 。
+  </div>
+ , **注意**:点 `watch` 后，我每次发博客或者博客中讨论问题，都会给你发信息。
 </p>  
+
 
 <p align="center">
   <b>注意事项</b>
