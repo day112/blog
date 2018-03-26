@@ -12,14 +12,15 @@
   <b>关注与订阅</b>
 </p>
 
-<p align="center">
-  <div align="center">
-    如果想要关注我，请点 `star` 或者 `floow` 。
-  </div>
-  <div align="center">
-    如果想要订阅我的博客，请点 `watch` 。
-  </div>
-</p>  
+
+
+<div align="center">
+  如果想要关注我，请点 `star` 或者 `floow` 。
+</div>
+<div align="center">
+  如果想要订阅我的博客，请点 `watch` 。
+</div>
+
 
 
 <p align="center">
