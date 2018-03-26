@@ -1,5 +1,7 @@
 <div align="center">
+  <a href="https://github.com/hua03/blog/issues">
   <img src="http://opd59bmxu.bkt.clouddn.com/201818261534-S.png"></img>
+  </a>
 </div>
 
 <p align="center">
