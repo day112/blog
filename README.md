@@ -4,11 +4,11 @@
   </a>
 </div>
 
+<p></p>
 <p align="center">
-    <a href="https://github.com/hua03/blog/issues">文章列表</a>
+    <a href="https://github.com/hua03/blog/issues"><b>文章列表</b></a>
 </p>
 
-<p></p>
 <p></p>
 
 <p align="center">
