@@ -5,10 +5,6 @@
 </div>
 
 <p></p>
-<p align="center">
-    
-</p>
-
 <p></p>
 
 <p align="center">
