@@ -6,13 +6,14 @@
 
 <p></p>
 <p align="center">
-    <a href="https://github.com/hua03/blog/issues"><b>文章列表</b></a>
+    
 </p>
 
 <p></p>
 
 <p align="center">
   <b>欢迎你来到我的博客！</b>
+  <a href="https://github.com/hua03/blog/issues"><b>文章列表</b></a>
 </p>
 
 <p></p>
