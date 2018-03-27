@@ -13,12 +13,11 @@
 </p>
 
 
-
-<div align="center">
-  如果想要关注我，请点 <b>star</b> 或者 <b>follow</b> 。
-</div>
 <div align="center">
   如果想要订阅我的博客，请点 <b>watch</b> 。
+</div>
+<div align="center">
+  如果想要关注我，请点 <b>star</b> 或者 <b>follow</b> 。
 </div>
 <div align="center">
   关注某篇博客的讨论，请点issue界面右边的 <b>Subscribe</b> 。
