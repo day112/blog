@@ -1,6 +1,6 @@
-# table 插件
+## table 插件
 
-## table 插件设置 scroll 导致的内容错误 BUG
+### table 插件设置 scroll 导致的内容错误 BUG
 
 - 所有列设置百分比宽度
 - 总的百分比和不能超过 100%
