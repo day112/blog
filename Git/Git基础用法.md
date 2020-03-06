@@ -16,8 +16,8 @@
   - [diff](https://git-scm.com/docs/git-diff)    显示commit之间或者commit和工作区的diff 
   - [commit](https://git-scm.com/docs/git-commit)  将修改提交到版本库         
   - [reset](https://git-scm.com/docs/git-reset)  重置HEAD，可用于取消对文件的修改       
-  - [rm](https://git-scm.com/docs/git-rm)          从工作区和暂存区中删除文件 
-  - [mv](https://git-scm.com/docs/git-mv)        移动文件或目录                         
+  - [rm](https://git-scm.com/docs/git-rm) 从工作区和暂存区中删除文件 
+  - [mv](https://git-scm.com/docs/git-mv) 移动文件或目录                         
 
 
 ### 1.3. 分支与合并
@@ -45,6 +45,7 @@
   -  [describe](https://git-scm.com/docs/git-describe)   根据描述查找对应信息                                                                                   
 
 ### 1.6. 补丁与BUG修复
+
   -  [apply](https://git-scm.com/docs/git-apply) 将补丁应用于文件   
   -  [cherry-pick](https://git-scm.com/docs/git-cherry-pick)   将某一分支的commit应用于其他分支    
   -  [diff](https://git-scm.com/docs/git-diff) 显示commit之间或者commit和工作区的diff等   
@@ -98,13 +99,13 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 ## 3. 获取仓库
 
-### 3.1. 初始化仓库
+### 3.1 初始化仓库
 
 ```bash
 git init
 ```
 
-### 3.2. 克隆已有的仓库
+### 3.2 克隆已有的仓库
 
 ```bash
 git clone <url> <dirname>
